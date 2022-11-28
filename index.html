@@ -28,23 +28,36 @@
             <canvas id="c"></canvas>
         </div>
     </main>
+
     
 
-    <script src="https://code.jquery.com/jquery-3.6.1.js"
-        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+
+    <script src="/loader/three.min.js"></script>
+    <!-- <script src="/loader/three.module.js"></script> -->
+    <script src="/loader/DRACOLoader.js"></script>
+    <script src="/loader/GLTFLoader.js"></script>
+    
+
+
+
+
     <!-- The main three.js file -->
-    <script src='https://unpkg.com/three@0.127.0/build/three.js'></script>
+    <!-- <script src='https://unpkg.com/three@0.127.0/build/three.js'></script>
+    <script type="module" src="/lib/three.module.js"></script> -->
 
     <!-- This brings in the ability to load custom 3D objects in the .gltf file format. Blender allows the ability to export to this format out the box -->
-    <script src='https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/loaders/GLTFLoader.js'></script>
+    <!-- <script src='https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/loaders/GLTFLoader.js'></script> -->
 
     <!-- This is a simple to use extension for three.js that activates all the rotating, dragging and zooming controls we need for both mouse and touch, there isn't a clear CDN for this that I can find -->
     <script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script>
+
+
     <script src="https://unpkg.com/three@0.106.2/examples/js/libs/stats.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
     <script src="/lib/dat.gui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.8/swiper-bundle.min.js"></script>
-
+    
     <script src="/js.js"></script>
 
 </body>

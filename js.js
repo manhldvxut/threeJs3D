@@ -1,3 +1,4 @@
+
 $(function() {
     var mySwiper = new Swiper ('.swiper-container', {
         direction: 'horizontal',
@@ -13,7 +14,8 @@ $(function() {
     // model
     var theModel;
 
-    const MODEL_PATH = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/chair.glb";
+    // const MODEL_PATH = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/chair.glb";
+    const MODEL_PATH = "/model/preview.glb";
 
     const BACKGROUND_COLOR = 0xf1f1f1;
     // Init the scene
@@ -39,8 +41,9 @@ $(function() {
 
     // Add a camerra
     var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = cameraFar;
     camera.position.x = 0;
+    camera.position.y = -9;
+    camera.position.z = 13;
 
     // Initial material
     const INITIAL_MTL = new THREE.MeshPhongMaterial({ color: 0xf1f1f1, shininess: 10 });
@@ -54,9 +57,13 @@ $(function() {
     ];
 
 
+    var dracoLoader = new THREE.DRACOLoader();
+    dracoLoader.setDecoderPath('/decoders/');
+    dracoLoader.setDecoderConfig({type: 'js'});
 
     // Init the object loader
     var loader = new THREE.GLTFLoader();
+    loader.setDRACOLoader(dracoLoader);
 
     loader.load(MODEL_PATH, function (gltf) {
         theModel = gltf.scene;
@@ -69,7 +76,7 @@ $(function() {
         });
 
         // Set the models initial scale   
-        theModel.scale.set(2.2, 2.2, 2.2);
+        theModel.scale.set(0.5, 0.5, 0.5);
         theModel.rotation.y = Math.PI;
 
         // Offset the y position a bit
@@ -173,8 +180,8 @@ $(function() {
 
 
     const positions = [ // camera position
-        [0, 4, 3], // camera 01
-        [4, 4, 0], // camera 02
+        [0, -9, 13], // camera 01
+        [11, -2, -10], // camera 02
         [-4, -4, 0], // camera 03
     ];
 
